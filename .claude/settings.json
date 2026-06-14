@@ -1,0 +1,78 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(make)",
+      "Bash(make build:*)",
+      "Bash(make libmarch:*)",
+      "Bash(make legacy:*)",
+      "Bash(make cmake:*)",
+      "Bash(make test:*)",
+      "Bash(make install:*)",
+      "Bash(make package:*)",
+      "Bash(make doc:*)",
+      "Bash(make clean:*)",
+      "Bash(cmake:*)",
+      "Bash(ctest:*)",
+      "Bash(nosetests:*)",
+      "Bash(python -m nose:*)",
+      "Bash(python3 -m nose:*)",
+      "Bash(pytest:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python3 -m pytest:*)",
+      "Bash(python -c:*)",
+      "Bash(python3 -c:*)",
+      "Bash(./libmarch/build/*/tests/*:*)",
+      "Bash(ls:*)",
+      "Bash(file:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(tree:*)",
+      "Bash(jq:*)",
+      "Bash(git status)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote:*)",
+      "Bash(git stash list:*)",
+      "Bash(git ls-files:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git merge-base:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git restore --staged:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Bash(rm -rf $HOME:*)",
+      "Bash(sudo:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/check-source.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "$CLAUDE_PROJECT_DIR/.claude/statusline.sh"
+  }
+}
