@@ -1,30 +1,68 @@
+# Root ignores for the revived repository. The legacy tree under pastsolvcon/
+# keeps its own pastsolvcon/.gitignore; this file targets the incoming modmesh
+# code (C++/pybind11 built via CMake) plus common Python and dev artifacts.
+
+# Agent local notes (the shared .claude/ framework is tracked; local files are not)
+CLAUDE.local.md
+
+# OS cruft
 .DS_Store
+
+# Editors and IDEs
+.idea
+.vscode
+.vs
+.ipynb_checkpoints/
+
+# ctags index
 tags
-setup.mk
-setup.cfg
+
+# Python bytecode and packaging metadata
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+MANIFEST
+
+# Build and install output
 build/
 build.dbg/
-.coverage
-.idea
-.ipynb_checkpoints/
-.vscode
-opt/
-tmp/
-dep/
 dist/
-MANIFEST
-solvcon.log
-# compiled files.
-*.pyc
+setup.mk
+setup.cfg
+
+# Vendored third-party dependencies (downloaded or built locally)
+thirdparty/install/
+thirdparty/archive/
+dep/
+opt/
+
+# Profiling results
+profiling/results/
+
+# Coverage data
+.coverage
+
+# Compiled C/C++ objects and shared libraries
 *.o
-*.so
-*.dylib
 *.os
 *.?os
+*.a
+*.so
+*.dylib
 *.pyd
 *.dll
 *.def
-*.a
-# debian packaging
-debian/files
-debian/solvcon*
+
+# MSVC / Windows build artifacts
+*.vcx*
+*.sln
+*.tlog
+*.obj
+*.pdb
+
+# Local environment files
+*.env
+
+# Scratch space
+tmp/
