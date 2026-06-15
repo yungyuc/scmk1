@@ -1,6 +1,4 @@
-# Root ignores for the revived repository. The legacy tree under pastsolvcon/
-# keeps its own pastsolvcon/.gitignore; this file targets the incoming modmesh
-# code (C++/pybind11 built via CMake) plus common Python and dev artifacts.
+# Root ignores.
 
 # Agent local notes (the shared .claude/ framework is tracked; local files are not)
 CLAUDE.local.md
