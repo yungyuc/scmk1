@@ -1,0 +1,30 @@
+.DS_Store
+tags
+setup.mk
+setup.cfg
+build/
+build.dbg/
+.coverage
+.idea
+.ipynb_checkpoints/
+.vscode
+opt/
+tmp/
+dep/
+dist/
+MANIFEST
+solvcon.log
+# compiled files.
+*.pyc
+*.o
+*.so
+*.dylib
+*.os
+*.?os
+*.pyd
+*.dll
+*.def
+*.a
+# debian packaging
+debian/files
+debian/solvcon*
