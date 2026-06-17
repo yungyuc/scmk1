@@ -1,5 +1,4 @@
-Contributors
-============
+# Contributors
 
 - Yung-Yu Chen <yyc@solvcon.net>
 - Sheng-Tao John Yu <yu.274@osu.edu>

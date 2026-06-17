@@ -1,45 +1,66 @@
+# Root ignores.
+
+# Agent local notes (the shared .claude/ framework is tracked; local files are not)
+CLAUDE.local.md
+
+# OS cruft
 .DS_Store
+
+# Editors and IDEs
+.idea
+.vscode
+.vs
+.ipynb_checkpoints/
+
+# ctags index
 tags
-setup.mk
-setup.cfg
+
+# Python bytecode and packaging metadata
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+MANIFEST
+
+# Build and install output
 build/
 build.dbg/
-.sconsign.dblite
-.coverage
-.idea
-.ipynb_checkpoints/
-.vscode
-scdata/
-doc/api/
-doc/source/_static/*.eps
-opt/
-tmp/
-dep/
 dist/
-ground/downloaded/
-soil/downloaded/
-MANIFEST
-solvcon.log
-# compiled files.
-*.pyc
+setup.mk
+setup.cfg
+
+# Vendored third-party dependencies (downloaded or built locally)
+thirdparty/install/
+thirdparty/archive/
+dep/
+opt/
+
+# Profiling results
+profiling/results/
+
+# Coverage data
+.coverage
+
+# Compiled C/C++ objects and shared libraries
 *.o
-*.so
-*.dylib
 *.os
 *.?os
+*.a
+*.so
+*.dylib
 *.pyd
 *.dll
 *.def
-*.a
-# examples.
-examples/*/*/result*/
-examples/*/*/mesh/
-sandbox/*/*/result/
-sandbox/*/result/
-sandbox/*/mesh/
-# debian packaging
-debian/files
-debian/solvcon*
-# Singularity images
-*.img
-*.simg
+
+# MSVC / Windows build artifacts
+*.vcx*
+*.sln
+*.tlog
+*.obj
+*.pdb
+
+# Local environment files
+*.env
+
+# Scratch space
+tmp/
